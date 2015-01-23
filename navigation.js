@@ -10,7 +10,7 @@ module.exports = function (derby) {
   var Navigation = Model.collection('Navigation', 'nav');
 
   Navigation.getAll = function(cb) {
-    var model = this.nsModel;
+    var model = this.model;
 
     model.subscribe(function (err) {
       // Possibility to deal with error handling
@@ -18,10 +18,12 @@ module.exports = function (derby) {
     });
   };
 
-  Navigation.sort = function () {
-    if(this._sort) return this._sort;
+  Navigation.standardSort = function () {
+    if(this._standardSort) return this._standardSort;
 
-    this._sort = this.nsModel.sort(function(a, b) {
+    var model = this.model;
+
+    this._standardSort = model.sort(function(a, b) {
       if(!a || !b) return false;
 
       if(_.isArray(a.dropdown)) a.dropdown.sort(function(a, b) { return a.sortOrder - b.sortOrder; });
@@ -31,10 +33,10 @@ module.exports = function (derby) {
       return a.sortOrder - b.sortOrder;
     });
 
-    return this._sort;
+    return this._standardSort;
   };
 
   Navigation.getDefaultURL = function () {
-    return this.sort().get()[0].url;
+    return this.standardSort().get()[0].url;
   };
 };
