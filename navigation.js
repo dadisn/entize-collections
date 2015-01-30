@@ -7,7 +7,7 @@ module.exports = function (derby) {
 
   if(Model.collectionExist(name, ns)) return;
 
-  var Navigation = Model.collection('Navigation', 'nav');
+  var Navigation = Model.collection(name, ns);
 
   Navigation.getAll = function(cb) {
     var model = this.model;
