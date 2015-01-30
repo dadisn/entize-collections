@@ -1,0 +1,15 @@
+{
+  "name": "entize-collections",
+  "version": "0.1.0",
+  "description": "Entize Collections",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dadisn/entize-collections.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^2.4.1"
+  }
+}
