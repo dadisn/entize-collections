@@ -2,6 +2,7 @@
   "name": "entize-collections",
   "version": "0.1.0",
   "description": "Entize Collections",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/dadisn/entize-collections.git"
@@ -11,5 +12,8 @@
   },
   "dependencies": {
     "lodash": "^2.4.1"
+  },
+  "publishConfig": {
+    "registry": "http://npm.entize.se"
   }
 }
