@@ -3,7 +3,7 @@ module.exports = function (derby) {
   var ns = 'steps';
   var Model = derby.Model;
 
-  if(Model.collectionExist(name, ns)) return;
+  if(Model.collectionExist(name)) return;
 
   var Steps = Model.collection(name, ns);
 

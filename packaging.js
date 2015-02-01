@@ -5,7 +5,7 @@ module.exports = function (derby) {
   var ns = 'packaging';
   var Model = derby.Model;
 
-  if(Model.collectionExist(name, ns)) return;
+  if(Model.collectionExist(name)) return;
 
   var Packaging = Model.collection(name, ns);
 
