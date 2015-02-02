@@ -25,7 +25,7 @@ module.exports = function (derby) {
     this.getFromMachine(step, machine, day, function (err, query) {
       var rows = query.get();
       var row = _getCurrentOrNext(time, rows);
-      var scoped = this.model.at(row.id);
+      var scoped = (row && row.id) ? this.model.at(row.id) : undefined;
 
       if(cb) return cb(err, scoped);
     }.bind(this));
@@ -38,8 +38,8 @@ function _getCurrentOrNext(time, list) {
   });
 
   var i = _.findIndex(list, function (row) {
-        return (row.temp.time + row.temp.duration > time || row.temp.time > time);
-      });
+    return (row.temp.time + row.temp.duration > time || row.temp.time > time);
+  });
 
   return list[i];
 }
