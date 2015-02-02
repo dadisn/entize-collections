@@ -48,9 +48,9 @@ module.exports = function (derby) {
         , preCheckRunDuration: null
       };
 
-      var id = model.add(run);
+      var runId = model.add(run);
 
-      return cb(null, id);
+      return cb(null, run, runId);
     });
 
   };
