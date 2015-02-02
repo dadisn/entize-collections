@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 module.exports = function (derby) {
   var name = 'RunData';
   var ns = 'rundata';
