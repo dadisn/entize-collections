@@ -12,7 +12,7 @@ module.exports = function (derby) {
   Rows.getFromMachine = function(step, machine, day, cb) {
     var model = this.model;
     var root = model.root;
-    var query = model.query(this.ns, {date: day, step: step, qty: {$gt: 0}});
+    var query = model.query(this.ns, {date: day, step: step, 'temp.machine': machine, qty: {$gt: 0}});
 
     query.subscribe(function (err) {
       // Possibility to deal with error handling
