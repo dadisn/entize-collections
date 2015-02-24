@@ -1,6 +1,6 @@
 {
   "name": "entize-collections",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Entize Collections",
   "main": "index.js",
   "repository": {
@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "sift": "*"
   },
   "publishConfig": {
     "registry": "http://npm.entize.se"
